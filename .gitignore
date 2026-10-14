@@ -1,0 +1,27 @@
+# Laravel
+/vendor
+/.phpunit.cache
+.phpunit.result.cache
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+.env
+.env.backup
+.env.production
+auth.json
+*.log
+
+# Frontend
+/frontend/node_modules
+/frontend/dist
+/frontend/.env
+
+# Editor / OS
+/.idea
+/.vscode
+/.fleet
+/.nova
+/.zed
+.DS_Store
+Thumbs.db
