@@ -4,8 +4,8 @@ NIM: 24/535316/SV/24196
 # Notes App — Laravel API + Vue 3 + Docker
 
 Aplikasi catatan (CRUD) untuk UTS Evolusi Perangkat Lunak:
-**backend Laravel 12 (REST API + token Sanctum)**, **frontend Vue 3 (Axios)**, **MySQL**, dijalankan dengan
-**Docker Compose**, dites dan di-deploy memakai **GitHub Actions** ke **GitHub Container Registry (GHCR)**.
+- backend Laravel 12 (REST API + token Sanctum), frontend Vue 3 (Axios), MySQL, dijalankan dengan
+- Docker Compose, dites dan di-deploy memakai GitHub Actions ke GitHub Container Registry (GHCR).
 
 ## Arsitektur
 
@@ -46,8 +46,8 @@ docker compose up --build
 - Kredensial DB bisa diubah lewat env `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD`, `MYSQL_ROOT_PASSWORD`.
 - Hentikan: `docker compose down` (tambah `-v` untuk menghapus data DB).
 
-Dockerfile backend dan frontend sama-sama **multi-stage**, dengan `.dockerignore` di root dan di `frontend/`.
-Backend berjalan di **FrankenPHP** (Caddy + PHP) sebagai user non-root.
+Dockerfile backend dan frontend sama-sama multi-stage, dengan `.dockerignore` di root dan di `frontend/`.
+Backend berjalan di FrankenPHP (Caddy + PHP) sebagai user non-root.
 
 ## Development tanpa Docker
 
@@ -73,10 +73,10 @@ cd frontend && npm run lint && npm test    # frontend
 
 ## CI/CD (GitHub Actions)
 
-- `.github/workflows/ci.yml` — **2 job**: `Backend (Laravel test)` dan `Frontend (Vue lint, test, build)`.
-  Jalan pada push ke `main`/`dev`/`feature/**` dan pada Pull Request ke `main`/`dev`.
+- `.github/workflows/ci.yml` — 2 job: `Backend (Laravel test)` dan `Frontend (Vue lint, test, build)`.
+  Jalan pada push ke `main`/`dev`/`feature/` dan pada Pull Request ke `main`/`dev`.
 - `.github/workflows/deploy.yml` — job `Deploy`: build image backend & frontend, push ke GHCR
-  (`ghcr.io/<owner>/<repo>-backend|frontend`, tag `latest` + SHA commit). Login memakai **GitHub Secrets**
+  (`ghcr.io/<owner>/<repo>-backend|frontend`, tag `latest` + SHA commit). Login memakai GitHub Secrets
   (`GITHUB_TOKEN`; opsional secret `VITE_API_URL`). Hanya jalan di `main`.
 
 ## Alur Git
