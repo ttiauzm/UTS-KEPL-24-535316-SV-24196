@@ -1,3 +1,6 @@
+Nama: Mutia Umniati Z
+NIM: 24/535316/SV/24196
+
 # Notes App — Laravel API + Vue 3 + Docker
 
 Aplikasi catatan (CRUD) untuk UTS Evolusi Perangkat Lunak:
